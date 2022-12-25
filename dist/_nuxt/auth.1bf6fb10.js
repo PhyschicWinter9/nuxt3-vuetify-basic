@@ -1,0 +1,1 @@
+import{_ as a,h as o,w as s,a as c,o as n,H as r}from"./entry.994f4589.js";const _={};function l(e,p){const t=c("v-app");return n(),o(t,{theme:"light",class:"verticalLayout"},{default:s(()=>[r(e.$slots,"default")]),_:3})}const u=a(_,[["render",l]]);export{u as default};

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<meta name="author" content="IT Genius Engineering Ltd., Thailand">
+<title> - Nuxt 3 Vuetify</title>
+<style type="text/css" id="vuetify-theme-stylesheet">.v-theme--light {
+      color-scheme: normal;
+      --v-theme-background: 255,255,255;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 255,255,255;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-variant: 66,66,66;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 238,238,238;
+      --v-theme-primary: 30,136,229;
+      --v-theme-primary-overlay-multiplier: 1;
+      --v-theme-primary-darken-1: 55,0,179;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 12,185,197;
+      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary-darken-1: 1,135,134;
+      --v-theme-secondary-darken-1-overlay-multiplier: 1;
+      --v-theme-error: 252,75,108;
+      --v-theme-error-overlay-multiplier: 1;
+      --v-theme-info: 3,201,215;
+      --v-theme-info-overlay-multiplier: 1;
+      --v-theme-success: 5,177,135;
+      --v-theme-success-overlay-multiplier: 1;
+      --v-theme-warning: 254,201,15;
+      --v-theme-warning-overlay-multiplier: 1;
+      --v-theme-accent: 252,75,108;
+      --v-theme-accent-overlay-multiplier: 1;
+      --v-theme-on-background: 0,0,0;
+      --v-theme-on-surface: 0,0,0;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 0,0,0;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 0,0,0;
+      --v-theme-on-accent: 255,255,255;
+      --v-border-color: 0, 0, 0;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 0.87;
+      --v-medium-emphasis-opacity: 0.6;
+      --v-disabled-opacity: 0.38;
+      --v-idle-opacity: 0.04;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.12;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 33, 37, 41;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 245, 245, 245;
+      --v-theme-on-code: 0, 0, 0;
+    }
+    .v-theme--dark {
+      color-scheme: dark;
+      --v-theme-background: 18,18,18;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 33,33,33;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-variant: 189,189,189;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 66,66,66;
+      --v-theme-primary: 30,136,229;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 55,0,179;
+      --v-theme-primary-darken-1-overlay-multiplier: 1;
+      --v-theme-secondary: 12,185,197;
+      --v-theme-secondary-overlay-multiplier: 2;
+      --v-theme-secondary-darken-1: 3,218,197;
+      --v-theme-secondary-darken-1-overlay-multiplier: 2;
+      --v-theme-error: 252,75,108;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 3,201,215;
+      --v-theme-info-overlay-multiplier: 2;
+      --v-theme-success: 5,177,135;
+      --v-theme-success-overlay-multiplier: 2;
+      --v-theme-warning: 254,201,15;
+      --v-theme-warning-overlay-multiplier: 2;
+      --v-theme-accent: 252,75,108;
+      --v-theme-accent-overlay-multiplier: 2;
+      --v-theme-on-background: 255,255,255;
+      --v-theme-on-surface: 255,255,255;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 0,0,0;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 0,0,0;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 0,0,0;
+      --v-theme-on-accent: 255,255,255;
+      --v-border-color: 255, 255, 255;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 0.87;
+      --v-medium-emphasis-opacity: 0.6;
+      --v-disabled-opacity: 0.38;
+      --v-idle-opacity: 0.1;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.16;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 33, 37, 41;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 52, 52, 52;
+      --v-theme-on-code: 204, 204, 204;
+    }
+    .bg-background {
+      --v-theme-overlay-multiplier: var(--v-theme-background-overlay-multiplier);
+      background: rgb(var(--v-theme-background)) !important;
+      color: rgb(var(--v-theme-on-background)) !important;
+    }
+    .bg-surface {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-overlay-multiplier);
+      background: rgb(var(--v-theme-surface)) !important;
+      color: rgb(var(--v-theme-on-surface)) !important;
+    }
+    .bg-surface-variant {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-variant-overlay-multiplier);
+      background: rgb(var(--v-theme-surface-variant)) !important;
+      color: rgb(var(--v-theme-on-surface-variant)) !important;
+    }
+    .bg-primary {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-overlay-multiplier);
+      background: rgb(var(--v-theme-primary)) !important;
+      color: rgb(var(--v-theme-on-primary)) !important;
+    }
+    .bg-primary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-darken-1-overlay-multiplier);
+      background: rgb(var(--v-theme-primary-darken-1)) !important;
+      color: rgb(var(--v-theme-on-primary-darken-1)) !important;
+    }
+    .bg-secondary {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-overlay-multiplier);
+      background: rgb(var(--v-theme-secondary)) !important;
+      color: rgb(var(--v-theme-on-secondary)) !important;
+    }
+    .bg-secondary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-darken-1-overlay-multiplier);
+      background: rgb(var(--v-theme-secondary-darken-1)) !important;
+      color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
+    }
+    .bg-error {
+      --v-theme-overlay-multiplier: var(--v-theme-error-overlay-multiplier);
+      background: rgb(var(--v-theme-error)) !important;
+      color: rgb(var(--v-theme-on-error)) !important;
+    }
+    .bg-info {
+      --v-theme-overlay-multiplier: var(--v-theme-info-overlay-multiplier);
+      background: rgb(var(--v-theme-info)) !important;
+      color: rgb(var(--v-theme-on-info)) !important;
+    }
+    .bg-success {
+      --v-theme-overlay-multiplier: var(--v-theme-success-overlay-multiplier);
+      background: rgb(var(--v-theme-success)) !important;
+      color: rgb(var(--v-theme-on-success)) !important;
+    }
+    .bg-warning {
+      --v-theme-overlay-multiplier: var(--v-theme-warning-overlay-multiplier);
+      background: rgb(var(--v-theme-warning)) !important;
+      color: rgb(var(--v-theme-on-warning)) !important;
+    }
+    .bg-accent {
+      --v-theme-overlay-multiplier: var(--v-theme-accent-overlay-multiplier);
+      background: rgb(var(--v-theme-accent)) !important;
+      color: rgb(var(--v-theme-on-accent)) !important;
+    }
+    .text-background {
+      color: rgb(var(--v-theme-background)) !important;
+    }
+    .border-background {
+      --v-border-color: var(--v-theme-background);
+    }
+    .text-surface {
+      color: rgb(var(--v-theme-surface)) !important;
+    }
+    .border-surface {
+      --v-border-color: var(--v-theme-surface);
+    }
+    .text-surface-variant {
+      color: rgb(var(--v-theme-surface-variant)) !important;
+    }
+    .border-surface-variant {
+      --v-border-color: var(--v-theme-surface-variant);
+    }
+    .on-surface-variant {
+      color: rgb(var(--v-theme-on-surface-variant)) !important;
+    }
+    .text-primary {
+      color: rgb(var(--v-theme-primary)) !important;
+    }
+    .border-primary {
+      --v-border-color: var(--v-theme-primary);
+    }
+    .text-primary-darken-1 {
+      color: rgb(var(--v-theme-primary-darken-1)) !important;
+    }
+    .border-primary-darken-1 {
+      --v-border-color: var(--v-theme-primary-darken-1);
+    }
+    .text-secondary {
+      color: rgb(var(--v-theme-secondary)) !important;
+    }
+    .border-secondary {
+      --v-border-color: var(--v-theme-secondary);
+    }
+    .text-secondary-darken-1 {
+      color: rgb(var(--v-theme-secondary-darken-1)) !important;
+    }
+    .border-secondary-darken-1 {
+      --v-border-color: var(--v-theme-secondary-darken-1);
+    }
+    .text-error {
+      color: rgb(var(--v-theme-error)) !important;
+    }
+    .border-error {
+      --v-border-color: var(--v-theme-error);
+    }
+    .text-info {
+      color: rgb(var(--v-theme-info)) !important;
+    }
+    .border-info {
+      --v-border-color: var(--v-theme-info);
+    }
+    .text-success {
+      color: rgb(var(--v-theme-success)) !important;
+    }
+    .border-success {
+      --v-border-color: var(--v-theme-success);
+    }
+    .text-warning {
+      color: rgb(var(--v-theme-warning)) !important;
+    }
+    .border-warning {
+      --v-border-color: var(--v-theme-warning);
+    }
+    .text-accent {
+      color: rgb(var(--v-theme-accent)) !important;
+    }
+    .border-accent {
+      --v-border-color: var(--v-theme-accent);
+    }
+    .on-background {
+      color: rgb(var(--v-theme-on-background)) !important;
+    }
+    .on-surface {
+      color: rgb(var(--v-theme-on-surface)) !important;
+    }
+    .on-primary {
+      color: rgb(var(--v-theme-on-primary)) !important;
+    }
+    .on-primary-darken-1 {
+      color: rgb(var(--v-theme-on-primary-darken-1)) !important;
+    }
+    .on-secondary {
+      color: rgb(var(--v-theme-on-secondary)) !important;
+    }
+    .on-secondary-darken-1 {
+      color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
+    }
+    .on-error {
+      color: rgb(var(--v-theme-on-error)) !important;
+    }
+    .on-info {
+      color: rgb(var(--v-theme-on-info)) !important;
+    }
+    .on-success {
+      color: rgb(var(--v-theme-on-success)) !important;
+    }
+    .on-warning {
+      color: rgb(var(--v-theme-on-warning)) !important;
+    }
+    .on-accent {
+      color: rgb(var(--v-theme-on-accent)) !important;
+    }
+</style><link rel="modulepreload" href="/blogdetail/1/_payload.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/entry.994f4589.js"><link rel="preload" as="style" href="/_nuxt/entry.e1247cf4.css"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/default.956e323f.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/_id_.f7b539ab.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/fetch.22926a17.js"><link rel="prefetch" as="script" crossorigin href="/_nuxt/auth.1bf6fb10.js"><link rel="prefetch" as="script" crossorigin href="/_nuxt/backend.48490720.js"><link rel="prefetch" as="script" crossorigin href="/_nuxt/error-component.46ceba7b.js"><link rel="prefetch" as="style" href="/_nuxt/error-component.b71e3af1.css"><link rel="prefetch" as="script" crossorigin href="/_nuxt/composables.7239556f.js"><link rel="stylesheet" href="/_nuxt/entry.e1247cf4.css"><style>.v-row{margin:0!important}</style><style>.brand[data-v-974d2c5d]{color:#fff;font-size:20px;font-weight:700;text-decoration:none}.menu[data-v-974d2c5d]{font-size:16px}</style><style>.v-footer[data-v-703d2738]{background:#789;color:#fff}.social-icons a[data-v-703d2738],a[data-v-703d2738]:link,a[data-v-703d2738]:visited{color:#fff;text-decoration:none}.social-icons a[data-v-703d2738]{border-radius:100%;display:inline-block;height:34px;line-height:34px;margin:0 5px;text-align:center;transition:.2s ease-in;width:34px}.social-icons a[data-v-703d2738]:hover{background:#1e88e5;color:#fff;transform:translate3d(0,-5px,0)}.footer-bottom-bar[data-v-703d2738]{margin-top:20px;padding-top:10px}</style></head>
+<body class="demo"><div id="__nuxt"><!--[--><div><div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index:1000;"><div class="v-application__wrap"><!--[--><div data-v-974d2c5d><header class="v-toolbar v-toolbar--density-default bg-blue accent-4 elevation-0 v-theme--light v-app-bar" style="top:0;z-index:1004;transform:translateY(0%);position:fixed;" app dark data-v-974d2c5d><!----><div class="v-toolbar__content" style="height:64px;"><!----><!----><!--[--><button type="button" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text v-app-bar-nav-icon d-block d-sm-none" style="" data-v-974d2c5d><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><i class="mdi-menu mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i><!--]--></span><!----><!----></button><a href="/" class="d-block d-lg-none brand ml-8" data-v-974d2c5d>NuxtPress</a><div class="v-container" data-v-974d2c5d><div class="v-row" data-v-974d2c5d><div class="v-col-sm-12 v-col-md-12 v-col-lg-4 v-col d-none d-lg-block" data-v-974d2c5d><div class="v-toolbar-title" data-v-974d2c5d><div class="v-toolbar-title__placeholder"><!----><!--[--><a href="/" class="d-flex brand mt-2" data-v-974d2c5d>NuxtPress</a><!--]--></div></div></div><div class="v-col-sm-12 v-col-md-12 v-col-lg-8 v-col d-none d-sm-block text-end" data-v-974d2c5d><!--[--><a class="v-btn v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text menu" style="" href="/" data-v-974d2c5d><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->หน้าหลัก<!--]--><!--]--></span><!----><!----></a><a class="v-btn v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text menu" style="" href="/about" data-v-974d2c5d><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->เกี่ยวกับเรา<!--]--><!--]--></span><!----><!----></a><a class="v-btn v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text menu" style="" href="/blog" data-v-974d2c5d><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->บล็อก<!--]--><!--]--></span><!----><!----></a><a class="v-btn v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text menu" style="" href="/contact" data-v-974d2c5d><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->ติดต่อเรา<!--]--><!--]--></span><!----><!----></a><a class="v-btn v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text menu" style="" href="/auth/login" data-v-974d2c5d><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->เข้าสู่ระบบ<!--]--><!--]--></span><!----><!----></a><!--]--><button type="button" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text menu" style="" data-v-974d2c5d><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--><i class="mdi-magnify mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true" data-v-974d2c5d></i><!--]--><!--]--></span><!----><!----></button></div></div></div><!--]--><!----></div><!----></header><!--[--><nav class="v-navigation-drawer v-navigation-drawer--left v-navigation-drawer--expand-on-hover v-theme--light elevation-10" style="left:0;z-index:1006;transform:translateX(-110%);position:fixed;transition:none !important;" left app><!----><!----><div class="v-navigation-drawer__content"><!--[--><div class="v-list v-theme--light bg-transparent v-list--density-default v-list--one-line" style="" role="listbox" data-v-974d2c5d><!--[--><!--[--><a class="v-list-item v-list-item--link v-theme--light v-list-item--density-default v-list-item--one-line v-list-item--variant-text mb-1" style="" href="/" tabindex="0" data-v-974d2c5d><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><!----><div class="v-list-item__content"><!----><!----><!--[--><div class="v-list-item-title" data-v-974d2c5d>หน้าหลัก</div><!--]--></div><!----></a><a class="v-list-item v-list-item--link v-theme--light v-list-item--density-default v-list-item--one-line v-list-item--variant-text mb-1" style="" href="/about" tabindex="0" data-v-974d2c5d><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><!----><div class="v-list-item__content"><!----><!----><!--[--><div class="v-list-item-title" data-v-974d2c5d>เกี่ยวกับเรา</div><!--]--></div><!----></a><a class="v-list-item v-list-item--link v-theme--light v-list-item--density-default v-list-item--one-line v-list-item--variant-text mb-1" style="" href="/blog" tabindex="0" data-v-974d2c5d><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><!----><div class="v-list-item__content"><!----><!----><!--[--><div class="v-list-item-title" data-v-974d2c5d>บล็อก</div><!--]--></div><!----></a><a class="v-list-item v-list-item--link v-theme--light v-list-item--density-default v-list-item--one-line v-list-item--variant-text mb-1" style="" href="/contact" tabindex="0" data-v-974d2c5d><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><!----><div class="v-list-item__content"><!----><!----><!--[--><div class="v-list-item-title" data-v-974d2c5d>ติดต่อเรา</div><!--]--></div><!----></a><a class="v-list-item v-list-item--link v-theme--light v-list-item--density-default v-list-item--one-line v-list-item--variant-text mb-1" style="" href="/auth/login" tabindex="0" data-v-974d2c5d><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><!----><div class="v-list-item__content"><!----><!----><!--[--><div class="v-list-item-title" data-v-974d2c5d>เข้าสู่ระบบ</div><!--]--></div><!----></a><!--]--><!--]--></div><!--]--></div><!----></nav><!----><!--]--></div><!--[--><!--[--><div class="mb-5"><div><div class="wrapper"><div class="v-row justify-center"><div class="v-col-sm-10 v-col-md-9 v-col-lg-7 v-col-12"><div class="text-center"><h2 class="ui-title font-weight-bold text-white mb-4 mt-5">DJI Osmo Pocker</h2></div></div></div></div><div class="v-container"><img src="https://www.itgenius.co.th/assets/frondend/images/picarticle/genius-41614494834724466.jpg" alt="DJI Osmo Pocker" class="w-100"><h3 class="my-4">โดยเจ้ากล้องรุ่นนี้ คือ DJI Osmo Pocket ที่มีขนาดเล็กจนน่าตกใจ แต่สเปคเทพสุดๆ มาพร้อมกันสั่นแบบ 3 แกน ให้ภาพที่นิ่งไม่สั่นไหว คุณภาพความคมชัด 4K เซนเซอร์รับภาพขนาด 1/ 2.3 นิ้ว F/2.0 ให้ภาพมุมกว้าง 80 องศา ตั้งค่าแบบ Manual ได้ ถ่ายไฟล์ RAW ได้ เหมาะแก่การพกพา แบตเตอรี่ใช้งานได้นานสูงสุดถึง 2 ชั่วโมง 20 นาที มีจอแสดงผลแบบทัชสกรีน ที่สำคัญราคา 13,500 บาท เท่านั้น งานนี้ Gopro Hero 7 Black มีหนาวๆ ร้อนๆ เลยทีเดียว แต่มันเอาลงน้ำไม่ได้นะ ต้องหาอุปกรณ์เสริมมาใช้ แล้วถ้าจะต่อไมค์ต้องหาซื้ออแดปเตอร์มาใช้เพิ่มด้วยเช่นกัน..สงสัยว่าจะต้องซื้ออุปกรณ์เสริมอีกหลายอย่างกันเลยทีเดียว</h3><p class="my-4">2020-09-22 09:26:57</p><a href="https://bit.ly/34NHTpP" target="_blank">อ่านเพิ่มเติม</a><br><button type="button" class="v-btn v-btn--elevated v-theme--light bg-primary v-btn--density-default v-btn--size-default v-btn--variant-elevated mb-5 ml-5" style="" fab dark fixed bottom left><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--><i class="mdi-arrow-left mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i><!--]--><!--]--></span><!----><!----></button></div></div></div><!--]--><!--]--><footer class="v-footer v-theme--light" style="_key:colorStyles;" data-v-703d2738><div class="v-container" data-v-703d2738><div class="v-row py-0" data-v-703d2738><div class="v-col-sm-6 v-col-md-6 v-col-lg-3 v-col-12 px-0" data-v-703d2738><h4 class="font-weight-bold font-18 mt-5" data-v-703d2738>Address</h4><p class="mt-2 mb-0" data-v-703d2738>3/499 Ladprao Wanghin 68 Bangkok 10230</p></div><div class="v-col-sm-6 v-col-md-6 v-col-lg-3 v-col-12 px-0" data-v-703d2738><h4 class="font-weight-bold font-18 mt-5" data-v-703d2738>Phone</h4><p class="mt-2 mb-0" data-v-703d2738>Reception : +66 02 570-8449</p><p data-v-703d2738>Office : +66 02 570-8449</p></div><div class="v-col-sm-6 v-col-md-6 v-col-lg-3 v-col-12 px-0" data-v-703d2738><h4 class="font-weight-bold font-18 mt-5" data-v-703d2738>Email</h4><p class="mt-2 mb-0" data-v-703d2738> Office : <a class="dark-link" href="/" data-v-703d2738>contact@itgenius.co.th</a></p><p data-v-703d2738> Site : <a class="dark-link" href="https://www.itgenius.co.th/" data-v-703d2738>itgenius.co.th</a></p></div><div class="v-col-sm-6 v-col-md-6 v-col-lg-3 v-col-12 px-0" data-v-703d2738><h4 class="font-weight-bold font-18 mt-5" data-v-703d2738>Social</h4><div class="social-icons mt-2" data-v-703d2738><a href="#" class="ml-0" data-v-703d2738><i class="mdi mdi-facebook mdi v-icon notranslate v-theme--light" style="font-size:24px;height:24px;width:24px;" aria-hidden="true" data-v-703d2738></i></a><a href="#" data-v-703d2738><i class="mdi mdi-twitter mdi v-icon notranslate v-theme--light" style="font-size:24px;height:24px;width:24px;" aria-hidden="true" data-v-703d2738></i></a><a href="#" data-v-703d2738><i class="mdi mdi-youtube mdi v-icon notranslate v-theme--light" style="font-size:24px;height:24px;width:24px;" aria-hidden="true" data-v-703d2738></i></a><a href="#" data-v-703d2738><i class="mdi mdi-instagram mdi v-icon notranslate v-theme--light" style="font-size:24px;height:24px;width:24px;" aria-hidden="true" data-v-703d2738></i></a></div></div></div><div class="footer-bottom-bar font-14 mt-10 mb-5" data-v-703d2738><div class="v-row" data-v-703d2738><div class="v-col-sm-12 v-col-md-6 v-col-lg-6 v-col px-0 py-0" data-v-703d2738><p data-v-703d2738>All Rights Reserved by<a href="https://www.itgenius.co.th/" class="link" data-v-703d2738>itgenius.co.th</a></p></div><div class="v-col-sm-12 v-col-md-6 v-col-lg-6 v-col px-0 py-0 text-md-right" data-v-703d2738><a href="#" class="link px-0" data-v-703d2738>Terms</a><a href="#" class="link px-4" data-v-703d2738>Legal</a><a href="#" class="link px-4" data-v-703d2738>Privacy</a></div></div></div></div></footer><!--]--></div></div></div><!--]--></div><script type="module">import p from "/blogdetail/1/_payload.js";window.__NUXT__={...p,...({state:{},_errors:{},serverRendered:true,config:{public:{},app:{baseURL:"\u002F",buildAssetsDir:"\u002F_nuxt\u002F",cdnURL:""}},prerenderedAt:1671986920393})}</script><script type="module" src="/_nuxt/entry.994f4589.js" crossorigin></script><script type="module" src="/_nuxt/default.956e323f.js" crossorigin></script><script type="module" src="/_nuxt/_id_.f7b539ab.js" crossorigin></script></body>
+</html>

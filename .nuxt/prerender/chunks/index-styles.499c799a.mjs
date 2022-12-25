@@ -1,0 +1,6 @@
+const index_vue_vue_type_style_index_0_scoped_64dd899e_lang = "@keyframes bounce-64dd899e{0%{transform:translateY(0)}50%{transform:translateY(-10px)}to{transform:translateY(0)}}.banner-title[data-v-64dd899e]{font-size:42px;line-height:54px;margin:20px 0 15px}.banner-subtitle[data-v-64dd899e]{font-size:21px}.banner-wrapper[data-v-64dd899e]{align-items:center;background:#2196f3;display:flex;min-height:600px;padding:40px 0 20px}.btn-custom-lg[data-v-64dd899e]{font-size:18px;height:auto;padding:10px 20px}.heroimg[data-v-64dd899e]{animation:bounce-64dd899e 2s infinite}@media (max-width:767px){.banner-title[data-v-64dd899e]{font-size:29px;line-height:40px}.banner-wrapper[data-v-64dd899e]{padding:90px 0 20px}}@media (min-width:1200px){.banner-subtitle[data-v-64dd899e]{margin-right:150px}}.banner1-component[data-v-64dd899e]{background-color:#fdbfa8;padding:60px 0}.banner1-title[data-v-64dd899e]{font-size:48px;line-height:50px;margin:20px 0 15px}@media (max-width:991px){.banner1-component .banner1-title[data-v-64dd899e]{font-size:35px}}";
+
+const indexStyles_499c799a = [index_vue_vue_type_style_index_0_scoped_64dd899e_lang];
+
+export { indexStyles_499c799a as default };
+//# sourceMappingURL=index-styles.499c799a.mjs.map
